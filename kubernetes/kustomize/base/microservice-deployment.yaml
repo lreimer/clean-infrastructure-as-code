@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clean-infrastructure-as-code
+  labels:
+    type: microservice
+    env: local
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: microservice
+  template:
+    metadata:
+      labels:
+        type: microservice
+        env: local
+    spec:
+      containers:
+        - name: microservice
+          image: lreimer/productive-cloud-native-devex
+          envFrom:
+            - configMapRef:
+                name: microservice-configmap
+          ports:
+            - containerPort: 8080

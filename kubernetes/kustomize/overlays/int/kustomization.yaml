@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  env: int
+
+namePrefix: int-
+
+bases:
+  # you can also specify a Git repo URL here
+  # deprecated, move to resources when working with kubectl apply -k
+  - ../../base
+
+patchesStrategicMerge:
+  - 2-replicas.yaml
+
+configMapGenerator:
+  - name: microservice-configmap
+    behavior: merge
+    files:
+      - microservice.properties
+    literals:
+      - DEFAULT_MESSAGE=Hello World INT.
+      - PORT=8080

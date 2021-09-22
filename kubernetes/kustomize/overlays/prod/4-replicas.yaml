@@ -1,0 +1,6 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clean-infrastructure-as-code
+spec:
+  replicas: 4

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    type: hoverfly
+  name: hoverfly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: hoverfly
+  template:
+    metadata:
+      labels:
+        type: hoverfly
+    spec:
+      containers:
+        - name: hoverfly
+          image: spectolabs/hoverfly:v1.3.2
+          ports:
+            - containerPort: 8500
+            - containerPort: 8888

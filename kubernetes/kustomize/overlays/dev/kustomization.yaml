@@ -1,0 +1,25 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  env: dev
+
+namePrefix: dev-
+
+bases:
+  # you can also specify a Git repo URL here
+  # deprecated, move to resources when working with kubectl apply -k
+  - ../../base
+
+resources:
+  - hoverfly-deployment.yaml
+  - hoverfly-service.yaml
+
+configMapGenerator:
+  - name: microservice-configmap
+    behavior: merge
+    files:
+      - microservice.properties
+    literals:
+      - DEFAULT_MESSAGE=Hello World DEV.
+      - PORT=8080

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    type: hoverfly
+  name: hoverfly
+spec:
+  ports:
+    - name: proxy
+      port: 8500
+      targetPort: 8500
+    - name: webserver
+      port: 8888
+      targetPort: 8888
+  selector:
+    type: hoverfly
