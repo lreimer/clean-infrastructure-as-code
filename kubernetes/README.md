@@ -35,6 +35,15 @@ $ polaris audit --audit-path . --set-exit-code-on-danger --set-exit-code-below-s
 $ snyk iac test nginx-deployment.yaml
 ```
 
+## Kustomize
+
+Keep our YAML redundancy free (DRY) using Kustomize.
+
+```bash
+$ kustomize build kustomize/overlays/prod/
+$ kubectl apply -k kustomize/overlays/prod/
+```
+
 ## Terratest 
 
 ```bash

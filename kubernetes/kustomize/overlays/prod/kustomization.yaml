@@ -19,7 +19,7 @@ patchesJson6902:
   - target:
       version: v1
       kind: Service
-      name: productive-cloud-native-devex
+      name: clean-infrastructure-as-code
     path: loadbalancer.yaml
 
 configMapGenerator:
