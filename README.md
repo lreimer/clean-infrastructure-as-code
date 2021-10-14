@@ -1,7 +1,6 @@
 # Clean Infrastructure as Code
 
-Demo repository for Clean Infrastructure as Code with showcases for different
-useful frameworks and testing tools.
+Demo repository for Clean Infrastructure as Code with showcases for different useful frameworks and testing tools.
 
 ## Maintainer
 
