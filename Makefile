@@ -1,4 +1,4 @@
-NAME = iac-testing
+NAME = clean-iac
 VERSION = 1.0.0
 GCP = gcloud
 ZONE = europe-west1-b
@@ -7,7 +7,7 @@ K8S = kubectl
 .PHONY: info
 
 info:
-	@echo "Testing Infrastructure as Code"
+	@echo "Clean Infrastructure as Code"
 
 prepare:
 	@$(GCP) config set compute/zone $(ZONE)
@@ -20,9 +20,6 @@ cluster:
 	@$(GCP) container clusters create $(NAME) --num-nodes=5 --enable-autoscaling --min-nodes=5 --max-nodes=10
 	@$(K8S) create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=$$(gcloud config get-value core/account)
 	@$(K8S) cluster-info
-
-test:
-	@go test
 
 gcloud-login:
 	@$(GCP) auth application-default login

@@ -11,7 +11,7 @@ $ kubeval nginx-deployment.yaml
 ## kube-score
 
 ```bash
-# see https://www.kubeval.com
+# see https://github.com/zegl/kube-score
 
 $ kubectl score nginx-deployment.yaml
 $ kubectl score nginx-deployment.yaml --exit-one-on-warning
@@ -33,6 +33,13 @@ $ polaris audit --audit-path . --set-exit-code-on-danger --set-exit-code-below-s
 ```bash
 # see https://docs.snyk.io/snyk-cli/install-the-snyk-cli
 $ snyk iac test nginx-deployment.yaml
+```
+
+## Checkov
+
+```bash
+# see https://github.com/bridgecrewio/checkov
+$ checkov -f nginx-deployment.yaml
 ```
 
 ## Kustomize
