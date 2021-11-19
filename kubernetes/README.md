@@ -8,6 +8,14 @@
 $ kubeval nginx-deployment.yaml
 ```
 
+## kubeconform
+
+```bash
+# see https://github.com/yannh/kubeconform
+$ brew install kubeconform
+$ kubeconform nginx-deployment.yaml
+```
+
 ## kube-score
 
 ```bash
