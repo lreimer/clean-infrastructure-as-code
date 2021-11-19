@@ -1,5 +1,13 @@
 # Testing Terraform Code
 
+## Pre-Commit + Terrascan
+
+```bash
+# see https://github.com/pre-commit/pre-commit
+# see https://github.com/accurics/terrascan
+$ brew install pre-commit
+```
+
 ## TFLint und Rule Sets
 
 ```bash
