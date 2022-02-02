@@ -26,16 +26,6 @@ $ kubectl score nginx-deployment.yaml --exit-one-on-warning
 $ kubectl score nginx-deployment.yaml --output-format ci
 ```
 
-## Polaris
-
-```bash
-# see https://polaris.docs.fairwinds.com/infrastructure-as-code/#install-the-cli
-
-$ polaris audit --audit-path . --format=pretty
-$ polaris audit --audit-path .
-$ polaris audit --audit-path . --set-exit-code-on-danger --set-exit-code-below-score 90
-```
-
 ## Snyk
 
 ```bash
