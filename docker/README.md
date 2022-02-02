@@ -21,6 +21,16 @@ $ docker build -t lreimer/snyk-test:1.0 .
 $ snyk container test --file=Dockerfile lreimer/snyk-test:1.0
 ```
 
+## Trivy
+
+```bash
+# Installation and usage instructions
+# https://github.com/aquasecurity/trivy
+
+$ docker build -t lreimer/trivy-test:1.0 .
+$ trivy images -s HIGH,CRITICAL lreimer/trivy-test:1.0
+```
+
 ## Container Structure Tests
 
 ```bash
